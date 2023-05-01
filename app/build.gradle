@@ -52,12 +52,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.1.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // Inyeccion de dependencias con Hilt
     implementation 'com.google.dagger:hilt-android:2.45'
+    debugImplementation 'androidx.compose.ui:ui-tooling:1.1.1'
     kapt 'com.google.dagger:hilt-compiler:2.45'
 
     // Importante: Definir ambos lifecycle para que no exista conflicto entre versiones
