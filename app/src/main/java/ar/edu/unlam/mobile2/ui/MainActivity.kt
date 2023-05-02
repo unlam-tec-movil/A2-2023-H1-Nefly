@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -16,6 +17,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,6 +35,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import androidx.navigation.ui.AppBarConfiguration
 import ar.edu.unlam.mobile2.R
 import ar.edu.unlam.mobile2.databinding.ActivityMainBinding
@@ -46,6 +57,8 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("MainActivity", "onCreate")
@@ -57,7 +70,22 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
                     CoroutineScope(Dispatchers.Main).launch {
                         Log.i("MainActivity", "Observer")
                         setContent {
-                            bienvenida()
+                            val navController = rememberNavController()
+                            NavHost(navController = navController, startDestination = "bienvenida"){
+                                composable(route = "bienvenida"){
+                                    bienvenida(navController)
+                                }
+                                composable(
+                                    route = "movies/{user}",
+                                    arguments = listOf(
+                                        navArgument("user"){type = NavType.StringType }
+                                    )
+                                ){
+                                    val username = it.arguments?.getString("user")
+                                    requireNotNull(username,{"No puede ser nulo porque seleccionar usuario es obligatorio"})
+                                    MoviesScreen(username)
+                                }
+                            }
                         }
                     }
                 }
@@ -71,7 +99,10 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
     }
 
     @Composable
-    fun bienvenida() {
+    fun bienvenida(navController: NavController) {
+
+        val onClick = {userSelected: String -> navController.navigate(route = "movies/${userSelected}")}
+
 
         Column {
 
@@ -118,6 +149,7 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
 
                     .padding(borderWidth)
                     .clip(CircleShape)
+                    .clickable {onClick("Usuario 1")}
 
             )
             Text(
@@ -143,6 +175,7 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
 
                     .padding(borderWidth)
                     .clip(CircleShape)
+                    .clickable{onClick("Usuario 2")}
 
 
             )
@@ -169,6 +202,7 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
 
                     .padding(borderWidth)
                     .clip(CircleShape)
+                    .clickable{onClick("Usuario 3")}
 
 
             )
@@ -188,7 +222,8 @@ class MainActivity : /*AppCompatActivity()*/ ComponentActivity() {
     @Preview(showBackground = true)
     @Composable
     fun vistaPantalla(){
-        bienvenida()
+        var navController = rememberNavController()
+        bienvenida(navController)
     }
 
 
