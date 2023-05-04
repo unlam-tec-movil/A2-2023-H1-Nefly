@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import ar.edu.unlam.mobile2.R
-import ar.edu.unlam.mobile2.ui.ui.theme.Mobile2_ScaffoldingTheme
+
 
 
 private val message: List<MyMessage> = listOf(
