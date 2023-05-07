@@ -14,4 +14,7 @@
     <string name="usuario_uno">Usuario1</string>
     <string name="usuario_dos">Usuario2\n</string>
     <string name="usuario_tres">Usuario3</string>
+    <string name="title_activity_main_screen">MainScreen</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="logo">Logo\n</string>
 </resources>
