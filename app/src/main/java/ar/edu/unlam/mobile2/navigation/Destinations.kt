@@ -6,4 +6,5 @@ sealed class Destinations(
     object MainScreen: Destinations("mainScreen")
     object MovieDetails: Destinations("movieDetails")
     object MovieScreen: Destinations("movieScreen")
+    object SplashScreen:Destinations("splashScreen")
 }
