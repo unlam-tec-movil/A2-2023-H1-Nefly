@@ -33,7 +33,7 @@ import androidx.navigation.NavController
 import ar.edu.unlam.mobile2.R
 
 @Composable
-fun Pantalla1(navegarPantalla2:()-> Unit
+fun Home(navegarPantalla2:()-> Unit
 ) {
 
 

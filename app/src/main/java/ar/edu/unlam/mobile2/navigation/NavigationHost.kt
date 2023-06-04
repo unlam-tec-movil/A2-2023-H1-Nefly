@@ -5,8 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ar.edu.unlam.mobile2.navigation.Destinations.*
-import ar.edu.unlam.mobile2.ui.screen.Pantalla1
-import ar.edu.unlam.mobile2.ui.screen.Pantalla2
+import ar.edu.unlam.mobile2.ui.screen.Home
+import ar.edu.unlam.mobile2.ui.screen.Movies
 import ar.edu.unlam.mobile2.ui.screen.SplashScreen
 
 @Composable
@@ -18,14 +18,14 @@ fun NavigationHost(){
            SplashScreen(navController)
         }
         composable(MainScreen.route){
-           Pantalla1(
+           Home(
                navegarPantalla2 = {
                    navController.navigate(MovieScreen.route)
                }
            )
         }
         composable(MovieScreen.route){
-            Pantalla2()
+            Movies()
         }
         composable(MovieDetails.route){
 

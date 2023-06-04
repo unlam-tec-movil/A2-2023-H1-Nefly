@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun Pantalla2(){
+fun Movies(){
     Column() {
         Text(  text = "Upcoming Movies",
             fontFamily = FontFamily.Serif,
