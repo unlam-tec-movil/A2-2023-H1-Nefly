@@ -6,7 +6,7 @@ import ar.edu.unlam.mobile2.core.data.MovieRepositoryImpl
 import ar.edu.unlam.mobile2.core.data.local.MovieDao
 import ar.edu.unlam.mobile2.core.data.local.MovieDatabase
 import ar.edu.unlam.mobile2.core.data.remote.MovieApi
-import com.mk.moviedb.core.data.remote.interceptor.ApiKeyInterceptor
+import ar.edu.unlam.mobile2.core.data.remote.interceptor.ApiKeyInterceptor
 import ar.edu.unlam.mobile2.core.domain.repository.MovieRepository
 import ar.edu.unlam.mobile2.core.domain.usecase.ReduceFilteredMovies
 import dagger.Module

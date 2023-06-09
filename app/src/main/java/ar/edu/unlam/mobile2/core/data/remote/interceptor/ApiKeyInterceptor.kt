@@ -1,4 +1,4 @@
-package com.mk.moviedb.core.data.remote.interceptor
+package ar.edu.unlam.mobile2.core.data.remote.interceptor
 
 import ar.edu.unlam.mobile2.BuildConfig
 import okhttp3.Interceptor
