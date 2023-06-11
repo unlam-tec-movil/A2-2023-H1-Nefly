@@ -40,7 +40,7 @@ fun HomeScreen(
         item(span = {
             GridItemSpan(COLUMS_IN_GRID)
         }) {
-            HomeHeader()
+            //COLOCAR APP BAR
         }
 
         if (state.upcomingMovies.isNotEmpty()) {
