@@ -15,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import ar.edu.unlam.mobile2.detail.presentation.DetailScreen
 import ar.edu.unlam.mobile2.home.presentation.HomeScreen
+import ar.edu.unlam.mobile2.home.presentation.components.AppBar
 import ar.edu.unlam.mobile2.ui.theme.MovieDbTheme
 import dagger.hilt.android.AndroidEntryPoint
 

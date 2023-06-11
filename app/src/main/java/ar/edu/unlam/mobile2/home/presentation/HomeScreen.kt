@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import ar.edu.unlam.mobile2.R
 import ar.edu.unlam.mobile2.core.domain.model.Movie
-import ar.edu.unlam.mobile2.home.presentation.components.HomeHeader
+import ar.edu.unlam.mobile2.home.presentation.components.AppBar
 import ar.edu.unlam.mobile2.home.presentation.components.HomeMovieList
 import ar.edu.unlam.mobile2.home.presentation.components.HomeMoviePoster
 import ar.edu.unlam.mobile2.home.presentation.components.HomeRecommended
@@ -33,14 +33,16 @@ fun HomeScreen(
     val state = viewModel.state
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = Modifier.fillMaxSize().padding(start = 24.dp, end = 24.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(start = 24.dp, end = 24.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item(span = {
             GridItemSpan(COLUMS_IN_GRID)
         }) {
-            //COLOCAR APP BAR
+          AppBar()
         }
 
         if (state.upcomingMovies.isNotEmpty()) {
