@@ -1,4 +1,4 @@
-package com.mk.moviedb.ui.theme
+package ar.edu.unlam.mobile2.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -22,7 +22,7 @@ fun HomeHeader(
     ) {
         Image(
             painter = painterResource(id = R.drawable.logomovie),
-            contentDescription = stringResource(R.string.emovie)
+            contentDescription = stringResource(R.string.movie)
         )
         // TODO: The Logo from FIGMA couldn't be exported.
     }
