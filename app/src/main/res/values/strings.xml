@@ -1,14 +1,6 @@
 <resources>
-    <string name="app_name">Mobile2_Scaffolding</string>
-    <string name="action_settings">Preferencias</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Primer Fragment</string>
-    <string name="second_fragment_label">Segundo Fragment</string>
-    <string name="next">Siguiente</string>
-    <string name="previous">Anterior</string>
-
-    <string name="hello_first_fragment">Saludo primer fragment</string>
-    <string name="hello_second_fragment">Saludo segundo fragment. Arg: %1$s</string>
-
-    <string name="cat_image">Imagen Gatito</string>
+    <string name="app_name">Nefly</string>
+    <string name="upcoming_releases">Proximos Estrenos</string>
+    <string name="popular_movies">Tendencia</string>
+    <string name="movie">Movie</string>
 </resources>
