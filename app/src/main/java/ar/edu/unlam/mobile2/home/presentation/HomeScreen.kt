@@ -42,7 +42,7 @@ fun HomeScreen(
         item(span = {
             GridItemSpan(COLUMS_IN_GRID)
         }) {
-          AppBar()
+          AppBar(R.string.app_name)
         }
 
         if (state.upcomingMovies.isNotEmpty()) {

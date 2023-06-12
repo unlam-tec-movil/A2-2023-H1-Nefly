@@ -29,7 +29,7 @@ interface MovieDao {
 
     @Query(
         """
-        SELECT * FROM MovieFavouriteEntity MOVIE_FAVOURITE JOIN UserEntity USER ON MOVIE_FAVOURITE.idUser = USER.idUser WHERE USER.idUser = :idUser ORDER BY MOVIE_FAVOURITE.added_date DESC
+        SELECT * FROM MovieFavouriteEntity MOVIE_FAVOURITE WHERE MOVIE_FAVOURITE.idUser = :idUser ORDER BY MOVIE_FAVOURITE.added_date DESC
         """
     )
     suspend fun getLikedMovies(idUser: Int): List<MovieFavouriteEntity>
