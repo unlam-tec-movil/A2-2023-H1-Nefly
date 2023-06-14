@@ -48,7 +48,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             DetailScreen(onBack = {
                                 navController.popBackStack()
-                            })
+                            }
+                        )
                         }
                     }
                 }
