@@ -63,18 +63,18 @@ fun DetailMovieInformation(
             contentAlignment = Alignment.Center
         ) {
             Text(
-                text = "Ver Trailer",
+                text = "add to favorite",
                 color = Color.White,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 14.sp
+                fontSize = 25.sp
             )
         }
         Spacer(modifier = Modifier.height(32.dp))
         Column(horizontalAlignment = Alignment.Start) {
             Text(
-                text = "MOVIE PLOT",
+                text = "Description",
                 color = Color.White,
-                fontSize = 14.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.SemiBold
             )
             Text(
