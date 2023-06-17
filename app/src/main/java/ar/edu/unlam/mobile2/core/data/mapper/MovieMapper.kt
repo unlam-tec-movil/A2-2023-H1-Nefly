@@ -1,6 +1,7 @@
 package ar.edu.unlam.mobile2.core.data.mapper
 
 import ar.edu.unlam.mobile2.core.data.local.entity.MovieEntity
+import ar.edu.unlam.mobile2.core.data.local.entity.MovieFavouriteEntity
 import ar.edu.unlam.mobile2.core.data.local.entity.MovieType
 import ar.edu.unlam.mobile2.core.data.remote.MovieApi
 import ar.edu.unlam.mobile2.core.data.remote.dto.MovieResult

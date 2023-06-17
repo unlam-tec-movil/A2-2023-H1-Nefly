@@ -3,10 +3,12 @@ package ar.edu.unlam.mobile2.core.di
 import android.app.Application
 import androidx.room.Room
 import ar.edu.unlam.mobile2.core.data.MovieRepositoryImpl
+import ar.edu.unlam.mobile2.core.data.local.FavouritesMovieRepositoryImpl
 import ar.edu.unlam.mobile2.core.data.local.MovieDao
 import ar.edu.unlam.mobile2.core.data.local.MovieDatabase
 import ar.edu.unlam.mobile2.core.data.remote.MovieApi
 import ar.edu.unlam.mobile2.core.data.remote.interceptor.ApiKeyInterceptor
+import ar.edu.unlam.mobile2.core.domain.repository.FavouritesMovieRepository
 import ar.edu.unlam.mobile2.core.domain.repository.MovieRepository
 import ar.edu.unlam.mobile2.core.domain.usecase.ReduceFilteredMovies
 import dagger.Module
@@ -56,4 +58,11 @@ object CoreModule {
     ): MovieRepository {
         return MovieRepositoryImpl(api, dao, ReduceFilteredMovies())
     }
+
+    @Singleton
+    @Provides
+    fun provideFavouriteMoviesRepository(dao: MovieDao): FavouritesMovieRepository{
+        return FavouritesMovieRepositoryImpl(dao)
+    }
+    
 }

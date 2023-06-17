@@ -17,7 +17,7 @@ import ar.edu.unlam.mobile2.core.domain.usecase.ReduceFilteredMovies
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class MovieRepositoryImpl(
+class MovieRepositoryImpl (
     private val api: MovieApi,
     private val dao: MovieDao,
     private val reduceFilteredMovies: ReduceFilteredMovies

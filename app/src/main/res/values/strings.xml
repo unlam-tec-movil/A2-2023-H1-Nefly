@@ -4,4 +4,6 @@
     <string name="popular_movies">Tendencia</string>
     <string name="movie">Movie</string>
     <string name="favourite">Favoritos</string>
+    <string name="markAsFavourite">Agregar a Favoritos></string>
+    <string name="unmarkAsFavourite">Sacar de Favoritos></string>
 </resources>

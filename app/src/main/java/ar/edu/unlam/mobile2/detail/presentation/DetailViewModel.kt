@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ar.edu.unlam.mobile2.core.domain.repository.FavouritesMovieRepository
 import ar.edu.unlam.mobile2.core.domain.repository.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val repository: MovieRepository
+    private val repository: MovieRepository,
+    private val favouriteRepository: FavouritesMovieRepository
 ) : ViewModel() {
     var state by mutableStateOf(DetailState())
         private set
@@ -41,4 +43,5 @@ class DetailViewModel @Inject constructor(
             println("El movie id es null")
         }
     }
+
 }

@@ -1,5 +1,6 @@
 package ar.edu.unlam.mobile2.core.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -29,8 +30,8 @@ interface MovieDao {
 
     @Query(
         """
-        SELECT * FROM MovieFavouriteEntity MOVIE_FAVOURITE WHERE MOVIE_FAVOURITE.idUser = :idUser ORDER BY MOVIE_FAVOURITE.added_date DESC
+        SELECT MOVIE.id, MOVIE.poster, MOVIE.type FROM MovieFavouriteEntity MOVIE_FAVOURITE JOIN MovieEntity MOVIE ON MOVIE_FAVOURITE.id = MOVIE.id WHERE MOVIE_FAVOURITE.idUser = :idUser ORDER BY MOVIE_FAVOURITE.added_date DESC
         """
     )
-    suspend fun getLikedMovies(idUser: Int): List<MovieFavouriteEntity>
+    suspend fun getLikedMovies(idUser: Int): List<MovieEntity>
 }
