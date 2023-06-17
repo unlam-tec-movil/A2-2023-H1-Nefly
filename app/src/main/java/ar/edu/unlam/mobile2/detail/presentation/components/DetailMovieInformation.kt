@@ -1,12 +1,15 @@
 package ar.edu.unlam.mobile2.detail.presentation.components
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,8 +23,13 @@ fun DetailMovieInformation(
     movie: MovieDetail,
     modifier: Modifier = Modifier
 ) {
+    val currentText = remember {
+        mutableStateOf("add to favorite")
+    }
     Column(
-        modifier = modifier.fillMaxWidth().padding(horizontal = 24.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -57,13 +65,17 @@ fun DetailMovieInformation(
         Text(text = formattedGenres, color = Color.White)
         Spacer(modifier = Modifier.height(32.dp))
         Box(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
                 .border(0.4.dp, Color.White, RoundedCornerShape(12.dp))
                 .padding(vertical = 16.dp),
             contentAlignment = Alignment.Center
         ) {
             Text(
-                text = "add to favorite",
+                modifier = Modifier.clickable {
+                    currentText.value = "Delete to favorite"
+                },
+                text = currentText.value,
                 color = Color.White,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 25.sp
