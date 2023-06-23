@@ -28,6 +28,7 @@ const val COLUMS_IN_GRID = 2
 @Composable
 fun HomeScreen(
     onMovieClick: (Movie) -> Unit,
+    onFavoriteClick: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val state = viewModel.state
@@ -42,7 +43,7 @@ fun HomeScreen(
         item(span = {
             GridItemSpan(COLUMS_IN_GRID)
         }) {
-          AppBar(R.string.app_name)
+          AppBar(R.string.app_name,onFavoriteClick)
         }
 
         if (state.upcomingMovies.isNotEmpty()) {

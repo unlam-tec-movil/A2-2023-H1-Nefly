@@ -23,6 +23,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import ar.edu.unlam.mobile2.detail.presentation.components.DetailMovieInformation
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.supervisorScope
 
 @Composable
 fun DetailScreen(
@@ -65,7 +68,9 @@ fun DetailScreen(
                             offsetY = (offsetY + (dragAmount.y / 2))
                                 .coerceIn(-300f, 100f)
                         }
-                    }
+                    },
+                isFavourite = state.isFavourite,
+                onFavouriteClick = {if(state.isFavourite) viewModel.deleteFavourite() else viewModel.addToFavourite()}
             )
 
             Box(

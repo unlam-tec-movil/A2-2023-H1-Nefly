@@ -20,8 +20,8 @@ class FavouritesMovieRepositoryImpl (
     private val dao: MovieDao,
 ): FavouritesMovieRepository {
     @RequiresApi(Build.VERSION_CODES.O)
-    override suspend fun addFavouriteMovie(movieId: Int, userId: Int) {
-        dao.insertFavouriteMovie(MovieFavouriteEntity(id = movieId, idUser = userId, addedDate = LocalDateTime.now()))
+    override suspend fun addFavouriteMovie(movieId: Int?, userId: Int) {
+        dao.insertFavouriteMovie(MovieFavouriteEntity(id = movieId?:0, idUser = userId, addedDate = LocalDateTime.now()))
     }
 
     override suspend fun deleteFavouriteMovie(movieId: Int, userId: Int) {

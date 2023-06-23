@@ -4,6 +4,10 @@
     <string name="popular_movies">Tendencia</string>
     <string name="movie">Movie</string>
     <string name="favourite">Favoritos</string>
-    <string name="markAsFavourite">Agregar a Favoritos></string>
-    <string name="unmarkAsFavourite">Sacar de Favoritos></string>
+    <string name="markAsFavourite">Agregar a Favoritos</string>
+    <string name="unmarkAsFavourite">Sacar de Favoritos</string>
+    <string name="favourite_content">Contenido de Favoritos</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="favorite_empty">No tiene peliculas agregadas a favoritos</string>
+    <string name="favorite_delete">¿Desea eliminar la pelicula de Favoritos?</string>
 </resources>

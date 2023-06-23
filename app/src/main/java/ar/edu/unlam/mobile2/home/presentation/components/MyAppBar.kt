@@ -16,11 +16,14 @@ import ar.edu.unlam.mobile2.R
 
 
 @Composable
-fun AppBar(title:Int){
+fun AppBar(
+    title:Int,
+    onFavoriteClick:() -> Unit
+){
         TopAppBar(
             title = { Text(text = stringResource(id = title))}, backgroundColor = Color.Black, contentColor = Color.White,
             actions = {
-                IconButton(onClick = { /*TODO*/ }) {
+                IconButton(onClick = onFavoriteClick) {
                     Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorite" )
                 }
                 IconButton(onClick = { /*TODO*/ }) {
@@ -36,5 +39,5 @@ fun AppBar(title:Int){
 @Preview(showBackground = true)
 @Composable
 fun PruebaAppBar(){
-    AppBar(R.string.app_name)
+    AppBar(R.string.app_name) {}
 }
