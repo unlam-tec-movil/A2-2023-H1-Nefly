@@ -25,7 +25,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.HeartBroken
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.twotone.Favorite
+import androidx.compose.material.icons.twotone.HeartBroken
 import androidx.compose.material.icons.twotone.Star
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
@@ -44,6 +48,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,6 +63,7 @@ import ar.edu.unlam.mobile2.ui.screens.composables.UpsideGradient
 import ar.edu.unlam.mobile2.ui.screens.shimmerEffect
 import ar.edu.unlam.mobile2.ui.theme.MyLightGray
 import ar.edu.unlam.mobile2.ui.theme.MyDarkGrey
+import ar.edu.unlam.mobile2.ui.theme.MyRed
 import ar.edu.unlam.mobile2.ui.theme.MyWhite
 import ar.edu.unlam.mobile2.ui.theme.MyYellow
 
@@ -368,7 +374,7 @@ fun FavoriteButton(
     removeFavoriteMovie: (Movie) -> Unit,
 ) {
     FavoriteIcon(
-        iconType = if (isMovieFavorite) Icons.Default.Star else Icons.TwoTone.Star,
+        iconType = if (isMovieFavorite) Icons.Default.Favorite else Icons.TwoTone.Favorite,
         movie = movie,
         favoriteFunction = if (isMovieFavorite) removeFavoriteMovie else addFavoriteMovie
     )
@@ -394,7 +400,7 @@ fun FavoriteIcon(
         Icon(
             imageVector = iconType,
             contentDescription = null,
-            tint = MyYellow,
+            tint = MyRed,
             modifier = modifier.size(80.dp)
         )
     }
