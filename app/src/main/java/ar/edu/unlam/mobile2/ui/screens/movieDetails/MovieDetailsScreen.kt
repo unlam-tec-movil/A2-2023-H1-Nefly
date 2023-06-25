@@ -27,11 +27,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.HeartBroken
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.twotone.Favorite
-import androidx.compose.material.icons.twotone.HeartBroken
-import androidx.compose.material.icons.twotone.Star
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -46,11 +42,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.modifier.modifierLocalConsumer
+
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
+
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -67,7 +63,7 @@ import ar.edu.unlam.mobile2.ui.theme.MyLightGray
 import ar.edu.unlam.mobile2.ui.theme.MyDarkGrey
 import ar.edu.unlam.mobile2.ui.theme.MyRed
 import ar.edu.unlam.mobile2.ui.theme.MyWhite
-import ar.edu.unlam.mobile2.ui.theme.MyYellow
+
 
 @Composable
 fun MovieDetailsScreen(
