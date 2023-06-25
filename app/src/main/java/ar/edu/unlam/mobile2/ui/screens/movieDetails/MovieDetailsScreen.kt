@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -45,6 +46,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -328,11 +330,11 @@ fun InfoBox(
 
 @Composable
 fun UserScore(voteAverage: Float, modifier: Modifier = Modifier) {
-    Row(modifier.padding(top = 10.dp)) {
+    Row(modifier.padding(top =5.dp).offset(240.dp,130.dp)) {
         CircularProgressBar(
             percentage = voteAverage,
             fontSize = 20.sp,
-            radius = 30.dp
+            radius = 25.dp
         )
         Spacer(modifier = modifier.width(12.dp))
         UserScoreText()
@@ -359,6 +361,7 @@ fun UserScoreText(modifier: Modifier = Modifier) {
 
 @Composable
 fun TitleText(title: String) {
+
     Text(
         text = title,
         color = MaterialTheme.colorScheme.onSurface,
@@ -389,7 +392,8 @@ fun FavoriteIcon(
 ) {
     Box(
         modifier
-            .size(80.dp)
+            .offset(0.dp,(-275).dp)
+            .size(60.dp)
             .clickable(indication = rememberRipple(
                 radius = 32.dp,
                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
@@ -398,10 +402,11 @@ fun FavoriteIcon(
                 favoriteFunction(movie)
             }) {
         Icon(
+
             imageVector = iconType,
             contentDescription = null,
             tint = MyRed,
-            modifier = modifier.size(80.dp)
+            modifier = modifier.size(60.dp)
         )
     }
 }

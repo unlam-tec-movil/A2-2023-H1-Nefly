@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -52,6 +53,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ar.edu.unlam.mobile2.R
 import coil.annotation.ExperimentalCoilApi
@@ -324,7 +326,7 @@ fun Username(
                 modifier = modifier.alpha(0.8f)
             )
         }
-        Spacer(modifier = modifier.width(5.dp))
+        Spacer(modifier = modifier.width(15.dp))
         Box(modifier = modifier
             .background(MaterialTheme.colorScheme.onSurface, CircleShape)
             .padding(2.dp)
@@ -336,7 +338,7 @@ fun Username(
                 imageVector = Icons.Default.Edit,
                 contentDescription = stringResource(id = R.string.ups_edit_username),
                 tint = MaterialTheme.colorScheme.surface,
-                modifier = modifier.size(15.dp)
+                modifier = modifier.size(20.dp)
             )
         }
     }
