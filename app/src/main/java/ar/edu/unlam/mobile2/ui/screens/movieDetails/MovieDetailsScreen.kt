@@ -42,11 +42,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -59,9 +57,9 @@ import ar.edu.unlam.mobile2.ui.screens.composables.ErrorMessage
 import ar.edu.unlam.mobile2.ui.screens.composables.MoviePosterImage
 import ar.edu.unlam.mobile2.ui.screens.composables.UpsideGradient
 import ar.edu.unlam.mobile2.ui.screens.shimmerEffect
+import ar.edu.unlam.mobile2.ui.theme.MyBlack
 import ar.edu.unlam.mobile2.ui.theme.MyLightGray
 import ar.edu.unlam.mobile2.ui.theme.MyDarkGrey
-import ar.edu.unlam.mobile2.ui.theme.MyRed
 import ar.edu.unlam.mobile2.ui.theme.MyWhite
 
 
@@ -234,7 +232,7 @@ fun MovieDetails(
         BackButton(
             modifier = modifier
                 .padding(top = 20.dp, start = 20.dp)
-                .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(15.dp)),
+                .background(color = MyBlack, RoundedCornerShape(1000.dp)),
             popBackStack = popBackStack
         )
         InfoBox(
@@ -254,7 +252,7 @@ fun BackButton(
     Box(
         modifier = modifier
             .padding(5.dp)
-            .background(MaterialTheme.colorScheme.surface)
+
     ) {
         IconButton(
             onClick = { popBackStack() },
@@ -262,7 +260,7 @@ fun BackButton(
             Icon(
                 imageVector = Icons.Default.ArrowBack,
                 contentDescription = stringResource(R.string.back_button_content_description),
-                tint = MaterialTheme.colorScheme.onSurface
+
             )
         }
     }
@@ -326,7 +324,7 @@ fun InfoBox(
 
 @Composable
 fun UserScore(voteAverage: Float, modifier: Modifier = Modifier) {
-    Row(modifier.padding(top =5.dp).offset(240.dp,130.dp)) {
+    Row(modifier.padding(top =5.dp)) {
         CircularProgressBar(
             percentage = voteAverage,
             fontSize = 20.sp,
@@ -388,21 +386,20 @@ fun FavoriteIcon(
 ) {
     Box(
         modifier
-            .offset(0.dp,(-275).dp)
-            .size(60.dp)
+            .offset(10.dp,(-274).dp)
+            .padding(5.dp)
+            .background(color = MyBlack, RoundedCornerShape(1000.dp))
             .clickable(indication = rememberRipple(
-                radius = 32.dp,
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
+                radius = 10.dp
             ),
                 interactionSource = remember { MutableInteractionSource() }) {
                 favoriteFunction(movie)
             }) {
         Icon(
-
             imageVector = iconType,
             contentDescription = null,
-            tint = MyRed,
-            modifier = modifier.size(60.dp)
+            tint = MyWhite,
+            modifier = modifier.size(50.dp).height(10.dp)
         )
     }
 }
