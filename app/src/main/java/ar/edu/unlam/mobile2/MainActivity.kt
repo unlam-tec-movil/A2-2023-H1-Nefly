@@ -23,7 +23,31 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+
                     MyMoviesApp()
+
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "HOME") {
+                        composable("HOME") {
+                            HomeScreen(onMovieClick = {
+                                navController.navigate("DETAIL/${it.id}")
+                            })
+                        }
+                        composable(
+                            "DETAIL/{movie_id}",
+                            arguments = listOf(
+                                navArgument("movie_id") {
+                                    type = NavType.IntType
+                                }
+                            )
+                        ) {
+                            DetailScreen(onBack = {
+                                navController.popBackStack()
+                            }
+                        )
+                        }
+                    }
+
                 }
             }
         }
