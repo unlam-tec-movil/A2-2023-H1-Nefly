@@ -8,6 +8,16 @@
 
     <style name="Theme.Mobile2_Scaffolding.NoActionBar">
     </style>
+    <style name="Theme.MyApp" parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logomovie</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+
+
+
+
+    </style>
 
 
 </resources>
